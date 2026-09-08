@@ -1,12 +1,10 @@
 package com.flight_booking_system.model.res;
 
+import lombok.Data;
+import lombok.AllArgsConstructor;
+
+@Data
+@AllArgsConstructor
 public class UserResponse {
     private String message;
-
-    public UserResponse(String message) {
-        this.message = message;
-    }
-
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
 }

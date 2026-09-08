@@ -8,6 +8,7 @@ import com.flight_booking_system.model.res.UserRegisterRequest;
 import com.flight_booking_system.model.res.UserResponse;
 import com.flight_booking_system.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,7 @@ public class AuthService {
     @Autowired
     private UserRepository userRepo;
 
-    @Autowired
-    private PasswordEncoder encoder;
+    private final PasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public UserResponse register(UserRegisterRequest request) {
         Optional<User> existing = userRepo.findByUsername(request.getUsername());
