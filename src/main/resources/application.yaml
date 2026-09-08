@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: flight-booking-system
+  datasource:
+    url: jdbc:mysql://localhost:3306/flight_booking_db
+    username: root
+    password: Aditya@123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8081
